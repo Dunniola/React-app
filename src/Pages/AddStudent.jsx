@@ -34,7 +34,7 @@ function AddStudent() {
       setEmail("");
       setPhone("");
 
-      navigate("/")
+      navigate("/student-details")
       
   }
   
@@ -48,31 +48,35 @@ function AddStudent() {
    <div className='grid place-content-center mt-40'>
     <form onSubmit={handleSubmit}>
       
+      
+      <div className='my-2'>
       <label htmlFor="name" className='font-bold'>Student Name</label>
-      <div className='w-'>
-      <input type="text" placeholder= 'Name' value={name}name='name' onChange={(e) =>setName(e.target.value)}className='border-2 '  />
+      <input type="text" placeholder= 'Name' value={name}name='name' onChange={(e) =>setName(e.target.value)}className='border-2 w-full  rounded-xl py-1 px-1'  />
       </div>
 
       
+      
+      <div className='my-2'>
       <label htmlFor="course" className='font-bold'>Student Course</label>
-      <div>
-      <input type="text" placeholder='Course'name='course'  value={course} onChange={(e) =>setCourse(e.target.value)} className='border-2' />
+      <input type="text" placeholder='Course'name='course'  value={course} onChange={(e) =>setCourse(e.target.value)} className='border-2 w-full rounded-xl py-1 px-1' />
       </div>
       
       
-      <label htmlFor="email" className='font-bold'>student Email</label>
-      <div>
-      <input type="email" placeholder='email'name='email' value={email}  onChange={(e) =>setEmail(e.target.value)} className='border-2' />
-      </div>
-
       
-      <label htmlFor="phone" className='font-bold'>student Phone</label>
-      <div>
-      <input type="number" placeholder= "Phone"name='phone' value={phone} onChange={(e) =>setPhone(e.target.value)} className='border-2' />
+      <div className='my-2'>
+      <label htmlFor="email" className='font-bold'>Student Email</label>
+      <input type="email" placeholder='email'name='email' value={email}  onChange={(e) =>setEmail(e.target.value)} className='border-2 w-full rounded-xl  py-1 px-1' />
       </div>
 
+      
+      
+      <div className='my-2'>
+      <label htmlFor="phone" className='font-bold'>Student Phone</label>
+      <input type="number" placeholder= "Phone"name='phone' value={phone} onChange={(e) =>setPhone(e.target.value)} className='border-2 w-full rounded-xl  py-1 px-1' />
+      </div>
+
       <div>
-      <button className='bg-blue-400 rounded-lg px-4 py-2 font-bold mt-5 '> Save Profile </button>
+      <button className='bg-blue-400 rounded-lg px-4 py-2 font-bold mt-5 w-full text-white rounded-xl'> Save Profile </button>
       </div>
     </form>
    </div>

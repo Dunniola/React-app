@@ -49,8 +49,8 @@ function updates() {
     
         const res = await axios.put(`http://localhost:8000/api/students/${id}`, updatedStudent);
         if (res.data.status === 'success') {
-          // Optionally redirect or notify user
-          navigate("/")
+          
+          navigate("/student-details")
           console.log(res.data.data)
           
         }else{
@@ -67,31 +67,35 @@ function updates() {
     <div className='mt-40 grid place-content-center min-h-100 mx-20 '>
     <form onSubmit={handleUpdated}>
       
+     
+      <div>
       <label className="font-bold " htmlFor="name">Student Name</label>
-      <div>
-      <input type="text" placeholder= 'Name' value={name}name='name' onChange={(e) =>setName(e.target.value)}className='border-2 mt-2  px-3 py-2'   />
+      <input type="text" placeholder= 'Name' value={name}name='name' onChange={(e) =>setName(e.target.value)}className='border-2 mt-2  px-3 py-1 w-full rounded-xl'   />
       </div>
 
       
-      <label className="font-bold" htmlFor="course" >Student Course</label>
+      
       <div className=''>
-      <input type="text" placeholder='Course'name='course'  value={course} onChange={(e) =>setCourse(e.target.value)} className='border-2 px-3 py-2' />
+      <label className="font-bold" htmlFor="course" >Student Course</label>
+      <input type="text" placeholder='Course'name='course'  value={course} onChange={(e) =>setCourse(e.target.value)} className='border-2 px-3 py-1 w-full rounded-xl' />
       </div>
       
       
+      
+      <div>
       <label  className="font-bold" htmlFor="email">Student Email</label>
-      <div>
-      <input type="email" placeholder='email'name='email' value={email}  onChange={(e) =>setEmail(e.target.value)} className='border-2 px-3 py-2' />
+      <input type="email" placeholder='email'name='email' value={email}  onChange={(e) =>setEmail(e.target.value)} className='border-2 px-3 py-1 w-full rounded-xl' />
       </div>
 
       
-      <label className="font-bold"  htmlFor="phone">Student Phone</label>
+      
       <div>
-      <input type="number" placeholder= "Phone"name='phone' value={phone} onChange={(e) =>setPhone(e.target.value)} className='border-2 px-3 py-2' />
+      <label className="font-bold"  htmlFor="phone">Student Phone</label>
+      <input type="number" placeholder= "Phone"name='phone' value={phone} onChange={(e) =>setPhone(e.target.value)} className='border-2 px-3 py-1 w-full rounded-xl' />
       </div>
 
       <div>
-      <button className='bg-blue-400 rounded-xl px-4 py-2  font-bold mt-5'> Update Profile </button>
+      <button className='bg-blue-400 rounded-xl px-4 py-2  font-bold mt-5 w-full text-white'> Update Profile </button>
       </div>
 
     </form>
